@@ -50,6 +50,29 @@ import static strman.Strman.endsWith;
 
 public class StrmanTests {
 
+    // **** Added tests ****
+    @Test
+    public void slice_shouldSliceStringAtBeginEndValue() {
+        assertThat(slice("hello", 0, 2), equalTo("he"));
+    }
+
+    @Test
+    public void length_shouldReturnLengthOfString() {
+        assertThat(length("hello"), equalTo(5));
+        assertThat(length(""), equalTo(0));
+    }
+
+    @Test
+    public void leftPad_invalidLength_shouldReturnOriginalString() {
+        assertThat(leftPad("hi", "i", 0), equalTo("hi"));
+    }
+
+    @Test
+    public void at_shouldReturnEmptyForNullValue() {
+        assertThat(at(null, 1), equalTo(Optional.empty()));
+    }
+    // *********************
+
     @Test
     public void append_shouldAppendStringsToEndOfValue() throws Exception {
         assertThat(append("f", "o", "o", "b", "a", "r"), equalTo("foobar"));
