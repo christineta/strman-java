@@ -41,7 +41,7 @@ import static java.util.stream.Collectors.*;
 /**
  * A String manipulation library without any dependencies
  */
-public abstract class Strman {
+public class Strman {
 
     private static final Predicate<String> NULL_STRING_PREDICATE = Objects::isNull;
     private static final Supplier<String> NULL_STRING_MSG_SUPPLIER = () -> "'value' should be not null.";
